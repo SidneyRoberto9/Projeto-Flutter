@@ -12,7 +12,7 @@ const movieSchema = z.object({
   genre: z.string(),
   age_group: z.string(),
   duration: z.number(),
-  rating: z.number(),
+  rating: z.string(),
   year: z.number(),
   description: z.string(),
 });
