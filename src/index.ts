@@ -19,11 +19,6 @@ const movieSchema = z.object({
 
 type MovieSchemaType = z.infer<typeof movieSchema>;
 
-app.register(require('@fastify/cors'), {
-  origin: '*',
-  methods: ['POST', 'GET', 'PUT', 'DELETE'],
-});
-
 app.get('/movie', async (req: any, res: any) => {
   const { search } = req.query as { search: string };
 
@@ -35,7 +30,7 @@ app.get('/movie', async (req: any, res: any) => {
     },
   });
 
-  res.send({ data: movies, quantity: movies.length });
+  res.send(movies);
 });
 
 app.post('/movie', async (req: any, res: any) => {
@@ -45,7 +40,7 @@ app.post('/movie', async (req: any, res: any) => {
     data: movieFromBody,
   });
 
-  res.status(201).send({ data: createdMovie });
+  res.status(201).send(createdMovie);
 });
 
 app.put('/movie/:id', async (req: any, res: any) => {
