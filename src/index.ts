@@ -74,6 +74,7 @@ app.delete('/all/movie', async (req: any, res: any) => {
 app.listen(
   {
     port: 8000,
+    host: '0.0.0.0',
   },
   (err: any, address: string) => {
     if (err) {

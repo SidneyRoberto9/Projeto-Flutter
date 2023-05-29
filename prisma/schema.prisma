@@ -17,7 +17,7 @@ model Movie {
   genre       String
   age_group   String
   duration    Int
-  rating      Float
+  rating      String
   year        Int
   description String
 }
